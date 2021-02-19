@@ -1,7 +1,7 @@
 FROM frolvlad/alpine-python3
 
-RUN apk --no-cache add tzdata ca-certificates \
-  && pip install -I flexget transmissionrpc \
+RUN apk --no-cache add tzdata ca-certificates build-base python3-dev \
+  && pip install -I flexget transmission-rpc \
   && mkdir -p /root/.flexget \
   && touch /root/.flexget/config.yml \
   && cp /usr/share/zoneinfo/America/New_York /etc/localtime \
